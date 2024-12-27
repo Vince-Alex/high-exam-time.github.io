@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #007bff; /* 默认背景颜色为蓝色 */
+    transition: background-color 0.5s, background-image 0.5s;
+}
+
+#title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+}
+
+#settingsButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #007bff; /* 按钮颜色 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+#settingsButton:hover {
+    background-color: #0056b3; /* 按钮悬停颜色 */
+}
+
+.settings {
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+    width: 300px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8); /* 毛玻璃效果背景 */
+    transition: backdrop-filter 0.5s;
+}
+
+.settings label, .settings input, .settings button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.settings input, .settings button {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.settings button {
+    background-color: #007bff; /* 修改为蓝色 */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.settings button:hover {
+    background-color: #0056b3; /* 按钮悬停颜色 */
+}
+
+.countdown {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transition: transform 0.5s, backdrop-filter 0.5s;
+    position: relative;
+}
+
+@keyframes countdownAnimation {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+.countdown .fade-in-out {
+    animation: fadeInOut 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-10px); }
+    50% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(10px); }
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .settings {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+.dark-mode .settings input, .dark-mode .settings button {
+    background-color: #555;
+    color: #ffffff;
+    border: 1px solid #666;
+}
+
+.dark-mode .settings button:hover {
+    background-color: #666;
+}
+
+.dark-mode #settingsButton {
+    background-color: #0056b3;
+}
+
+.dark-mode #settingsButton:hover {
+    background-color: #003d7a;
+}
+
+.fade-in {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hidden {
+    display: none;
+}
+
+.footer-note {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #666;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+.footer-note a {
+    color: #666;
+    text-decoration: none;
+}
+
+.footer-note a:hover {
+    text-decoration: underline;
+}
