@@ -7,7 +7,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #007bff; /* 默认背景颜色为蓝色 */
+    background-color: #4b8cd2; /* 默认背景颜色为蓝色 */
     transition: background-color 0.5s, background-image 0.5s;
 }
 
